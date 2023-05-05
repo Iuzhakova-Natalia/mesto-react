@@ -1,0 +1,6 @@
+.card__item {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
