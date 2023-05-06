@@ -6,7 +6,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
   const [userName, setUserName] = useState("");
   const [userDescription, setUserDescription] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
-  const [cards, getCards] = useState([]);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
     api
@@ -21,7 +21,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
     api
       .getCards()
       .then((cards) => {
-        getCards(cards);
+        setCards(cards);
       })
       .catch((error) => console.log(error));
   }, []);
