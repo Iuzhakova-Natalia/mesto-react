@@ -43,7 +43,7 @@ function App() {
         maxLength={40} 
         defaultValue required />
               
-        <span className="form__input-error name-input-error">Вы пропустили это поле</span>
+        <span className="form__input-error name-input-error"></span>
               
         <input 
         className="form__input-text form__input-text_type_about" 
