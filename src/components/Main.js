@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import api from'../utils/Api';
+import Card from "./Card"
 
-function Main({onEditAvatar, onEditProfile, onAddPlace}) {
+function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick}) {
   const [userName, setUserName] = useState("");
   const [userDescription, setUserDescription] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
@@ -19,15 +20,9 @@ function Main({onEditAvatar, onEditProfile, onAddPlace}) {
 
       api
       .getCards()
-      .then((cardsData) => {
-        getCards(
-          cardsData.map((data) => ({
-            likes: data.likes,
-            name: data.name,
-            link: data.link,
-            cardId: data._id,
-          }))
-        )
+      .then((cards) => {
+        getCards(cards);
+        
       })
       .catch((error) => console.log(error))
   }, [])
@@ -52,6 +47,15 @@ function Main({onEditAvatar, onEditProfile, onAddPlace}) {
         </section>
         <section className="cards-container">
         </section>
+        <section className="cards-container">
+        {cards.map((card) => (
+          <Card
+            key={card._Id}
+            card={card}
+            onCardClick={onCardClick}
+          />
+        ))}
+      </section>
       </main>
     );
   }
