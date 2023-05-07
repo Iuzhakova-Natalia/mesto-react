@@ -1,14 +1,16 @@
 .card__delete {
- width: 18px;
- height: 19px;
- background-image: url(../../../images/Korzina.svg);
- background-color: transparent;
- border: 0;
- position: absolute;
- margin: 20px 20px 0 244px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 18px;
+  height: 19px;
+  padding: 0;
+  background: url(../../../images/Korzina.svg) no-repeat center / contain;
+  border: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 .card__delete:hover {
   opacity: 0.6;
-  cursor: pointer; 
 }

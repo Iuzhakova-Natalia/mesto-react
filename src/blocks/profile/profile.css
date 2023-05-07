@@ -4,6 +4,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
+  padding-bottom: 51px;
   color: #FFFFFF;
 }
 
@@ -14,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding-bottom: 36px;
   }
 }
 

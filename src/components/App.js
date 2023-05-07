@@ -37,6 +37,7 @@ function App() {
   }
 
   return (
+    <div className="root">
     <div className="page">
       <Header />
       <Main
@@ -144,6 +145,7 @@ function App() {
 
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </div>
+  </div>
   );
 }
 

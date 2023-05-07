@@ -6,8 +6,8 @@ function Card(props) {
   }
 
   return (
-    <ul className="card">
-      <li className="card__item">
+   
+      <li className="card">
         <img
           className="card__image"
           src={props.card.link}
@@ -26,7 +26,7 @@ function Card(props) {
           </div>
         </div>
       </li>
-    </ul>
+    
   );
 }
 
