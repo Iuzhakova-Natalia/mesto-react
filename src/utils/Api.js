@@ -50,7 +50,7 @@ class Api {
   getCards() {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'GET',
-      headers: this._headers
+      headers: this._headers,
     })
       .then(this._checkResponse)
   }
