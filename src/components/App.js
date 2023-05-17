@@ -17,14 +17,13 @@ function App() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    api
-      .getUserInfo()
+    Promise.all([api.getUserInfo(), api.getCards()])
       .then(([user, cards]) => {
         setCurrentUser(user);
         setCards(cards);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(`Ошибка: ${err}`);
       });
   }, []);
 
