@@ -21,7 +21,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   const cardLikeButtonClassName = `card__like ${
     isLiked && "card__like_active"
   }`;
-
+  
   return (
     <li className="card">
       <img
