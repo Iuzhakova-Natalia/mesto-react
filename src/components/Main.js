@@ -2,9 +2,17 @@ import React, { useContext } from "react";
 import Card from "./Card";
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
 
-function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards }) {
+function Main({
+  onEditAvatar,
+  onEditProfile,
+  onAddPlace,
+  onCardClick,
+  cards,
+  onCardLike,
+  onCardDelete,
+}) {
   const currentUser = useContext(CurrentUserContext);
-  
+
   return (
     <main className="content">
       <section className="profile">
@@ -13,7 +21,11 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards }) {
           type="button"
           onClick={onEditAvatar}
         >
-          <img className="profile__avatar" src={currentUser.avatar} alt="фото" />
+          <img
+            className="profile__avatar"
+            src={currentUser.avatar}
+            alt="фото"
+          />
         </button>
         <div className="profile__info">
           <div className="profile__info-object">
@@ -34,10 +46,16 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards }) {
       </section>
       <section className="gallery">
         <ul className="cards-container">
-        {cards.map((card) => (
-          <Card key={card._id} card={card} onCardClick={onCardClick} />
-        ))}
-       </ul>
+          {cards.map((card) => (
+            <Card
+              key={card._id}
+              card={card}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              onCardDelete={onCardDelete}
+            />
+          ))}
+        </ul>
       </section>
     </main>
   );
