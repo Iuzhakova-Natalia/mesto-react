@@ -28,3 +28,5 @@ React:
  
 Работа с API;
 Методология БЭМ + файловая структура Nested БЭМ;
+
+ссылка на сайт https://iuzhakova-natalia.github.io/mesto-react/
